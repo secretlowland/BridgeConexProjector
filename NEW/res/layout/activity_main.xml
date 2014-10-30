@@ -1,0 +1,212 @@
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#ffffff"
+    tools:context="com.bridgeface.projector.MainActivity"
+    tools:ignore="MergeRootFrame" >
+	
+    <!-- 该布局为接收图片时的布局 -->
+    <LinearLayout
+        android:id="@+id/layout_show_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:gravity="center"
+        android:orientation="vertical" 
+        android:visibility="gone">
+        
+        <ProgressBar 
+            android:id="@+id/pb_loading_progress"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:visibility="gone"/>
+        
+        <ImageView
+        android:id="@+id/iv_img"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="#ffffff" />      
+
+    </LinearLayout>
+    
+    
+    
+    <!-- 该布局为初始化界面 -->
+    <LinearLayout
+        android:id="@+id/layout_init"
+	    android:layout_width="match_parent"
+	    android:layout_height="fill_parent"
+	    android:orientation="vertical"
+	    android:gravity="center" 
+	    android:visibility="visible">
+        
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="0dp"
+            android:orientation="vertical"
+            android:gravity="center"
+            android:layout_weight="12">
+            
+            <TextView
+	        android:layout_width="wrap_content"
+	        android:layout_height="wrap_content"
+	        android:layout_gravity="center"
+	        android:text="BridgeConex桥牌"
+	        android:textSize="30sp"
+	        android:textColor="#00697d" />
+            
+            <LinearLayout 
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="vertical">
+                
+                <TextView
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="无线录入算分系统"
+			        android:textSize="40sp"
+			        android:textColor="#00697d" />
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="[ V00.00.08 ]"
+                    android:textSize="18sp"
+                    android:textColor="#00697d"  />		                
+                
+            </LinearLayout>
+
+            <TextView 
+                android:id="@+id/tv_screen_size"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="可显示区域：正在获取..."
+                android:textSize="18sp"
+                android:textColor="#00697d"  />
+	    	<TextView
+	    	    android:id="@+id/tv_ip_address"
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content" 
+	    	    android:text="IP地址 : 正在获取..."
+	    	    android:textSize="18sp"
+	    	    android:textColor="#00697d"  />
+	    	
+	    	<!-- 显示连接状态 -->
+	    	<LinearLayout
+	    	    android:layout_width="wrap_content"
+	    	    android:layout_height="wrap_content"
+	    	    android:orientation="horizontal">
+	    	    
+		    	<TextView
+			        android:id="@+id/tv_connect_status"
+			        android:layout_width="wrap_content"
+			        android:layout_height="wrap_content"
+			        android:text="正在启动  "
+			        android:textSize="18sp"
+			        android:textColor="#00697d" />
+		    	<ProgressBar 
+		    	    android:id="@+id/pb_connect_progress"
+		    	    android:layout_width="wrap_content"
+		    	    android:layout_height="wrap_content"
+		    	    android:layout_gravity="center"
+		    	    android:layout_marginTop="1dp"
+		    	    style="?android:attr/progressBarStyleSmallTitle"/>
+	            
+	        </LinearLayout>
+
+    	</LinearLayout>
+    	<LinearLayout 
+    	    android:layout_width="fill_parent"
+    	    android:layout_height="0dp"
+    	    android:orientation="vertical"
+    	    android:gravity="center"
+    	    android:background="#ffffff"
+    	    android:layout_weight="2">
+	    	
+    	    <TextView
+		        android:layout_width="wrap_content"
+		        android:layout_height="wrap_content"
+		        android:text="http:// www.bridgeface.com"
+		        android:textSize="15sp"
+		        android:textColor="#678ba3" />
+	    	
+    	    <TextView
+    	    android:layout_width="wrap_content"
+    	    android:layout_height="wrap_content"
+    	    android:text="Copyright©2014"
+    	    android:textColor="#678ba3" />
+    	    
+    	</LinearLayout>
+
+    </LinearLayout>
+    
+    <!-- 该布局为倒计时界面 -->
+    <LinearLayout 
+        android:id="@+id/layout_count_down"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:visibility="gone"
+        android:orientation="vertical" >
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="45dp"
+            android:background="#fff"
+            android:orientation="vertical"
+            android:gravity="center_vertical">
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="20dp"
+                android:layout_marginTop="5dp"
+                android:textSize="24sp"
+                android:text="倒计时"/>
+            <TextView
+                android:layout_width="fill_parent"
+                android:layout_height="1dp"
+                android:layout_marginTop="6dp"
+                android:background="#cccccc"/>
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_weight="9"
+            android:orientation="vertical"
+            android:gravity="center">
+            
+            <TextView
+            android:id="@+id/tv_game_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:textColor="#00697d"/>
+
+        <TextView
+            android:id="@+id/tv_left_time"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="85sp"
+            android:textColor="#00697d" />
+            
+        </LinearLayout>
+        <LinearLayout 
+            android:layout_width="fill_parent"
+            android:layout_height="65dp"
+            android:layout_weight="1"
+            android:orientation="vertical">
+        
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:text="BridgeConex桥牌无线录入算分系统 V00.00.08"
+                android:textSize="16sp"/>
+                
+            
+        </LinearLayout>
+        
+    </LinearLayout>
+    
+</FrameLayout>
+
